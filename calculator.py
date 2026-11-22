@@ -18,6 +18,11 @@ def divide(a, b):
         raise ValueError("Cannot divide by zero")
     return a / b
 
+def percentage(part, whole):
+    if whole == 0:
+        raise ValueError("whole is zero")
+    return part / whole * 100
+
 if __name__ == "__main__":
     print("2 + 3 =", add(2, 3))
     print("5 - 2 =", subtract(5, 2))
