@@ -20,13 +20,14 @@ def divide(a, b):
 
 def power(a, b):
     result = 1
-    for i in range(b - 1):   # BUG: should be range(b)
+    for i in range(b):
         result *= a
     return result
 
-
 def average(numbers):
-    return sum(numbers) / len(numbers)   # BUG: crashes on empty list
+    if not numbers:
+        raise ValueError("List is empty")
+    return sum(numbers) / len(numbers)
 
 if __name__ == "__main__":
     print("2 + 3 =", add(2, 3))
