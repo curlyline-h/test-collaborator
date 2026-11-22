@@ -19,7 +19,9 @@ def divide(a, b):
     return a / b
 
 def percentage(part, whole):
-    return part / whole * 100   # BUG: no check for whole == 0
+    if whole == 0:
+        raise ValueError("whole is zero")
+    return part / whole * 100
 
 if __name__ == "__main__":
     print("2 + 3 =", add(2, 3))
