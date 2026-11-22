@@ -17,7 +17,16 @@ def divide(a, b):
     if b == 0:
         raise ValueError("Cannot divide by zero")
     return a / b
+    
+def power(a, b):
+    result = 1
+    for i in range(b - 1):   # BUG: should be range(b)
+        result *= a
+    return result
 
+
+def average(numbers):
+    return sum(numbers) / len(numbers)   # BUG: crashes on empty list
 
 if __name__ == "__main__":
     print("2 + 3 =", add(2, 3))
